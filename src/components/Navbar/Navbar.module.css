@@ -1,0 +1,40 @@
+.navigationBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: #000;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.navigationBar h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.navLinks li {
+  color: #fff;
+  font-size: 16px;
+}
+
+.navLinks button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.navLinks button:hover {
+  background-color: #1d4ed8;
+}
