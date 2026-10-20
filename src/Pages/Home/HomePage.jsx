@@ -1,7 +1,9 @@
+import HeroBanner from "./HeroBanner.jsx";
+
 function HomePage() {
   return (
     <section>
-      <h2>Home Page</h2>
+      <HeroBanner />
       <p>Browse our collection of products</p>
     </section>
   );
