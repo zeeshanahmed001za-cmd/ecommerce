@@ -1,79 +1,307 @@
+/* Hero Section */
 .hero {
-  display: flex;
+  position: relative;
+  margin: 32px 0 48px;
+  background: linear-gradient(135deg, #f0f7ff 0%, #f8fafc 50%, #eff6ff 100%);
+  border: 1px solid #e0edff;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.heroContainer {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
-  min-height: 340px;
-  padding: 48px;
-  background: linear-gradient(135deg, #eff6ff, #f8fafc);
-  border-radius: 12px;
+  gap: 48px;
+  padding: 56px 48px;
 }
 
+/* Left Content */
 .heroContent {
-  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
 }
 
-.eyebrow {
-  margin-bottom: 16px;
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background-color: #ffffff;
+  border: 1px solid #dbeafe;
+  border-radius: 9999px;
   color: #2563eb;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.08em;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.08);
+  margin-bottom: 20px;
 }
 
-.heroContent h1 {
-  margin-bottom: 16px;
-  color: #111827;
-  font-size: 42px;
-  font-weight: 700;
-  line-height: 1.2;
+.badgePulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.headline {
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #0f172a;
+  margin-bottom: 18px;
+  letter-spacing: -0.03em;
+}
+
+.highlight {
+  background: linear-gradient(135deg, #2563eb 20%, #1d4ed8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .description {
-  max-width: 480px;
-  margin-bottom: 24px;
-  color: #6b7280;
+  color: #475569;
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.65;
+  max-width: 520px;
+  margin-bottom: 32px;
 }
 
-.shopButton {
-  padding: 13px 24px;
-  border: none;
-  border-radius: 6px;
+/* CTA Group */
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 26px;
+  border-radius: 10px;
   background-color: #2563eb;
   color: #ffffff;
   font-size: 15px;
   font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+  transition: all 0.2s ease;
 }
 
-.shopButton:hover {
+.primaryButton:hover {
   background-color: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.38);
 }
 
-/* Responsive layout */
-@media (max-width: 768px) {
-  .hero {
-    min-height: 280px;
-    padding: 32px 24px;
+.primaryButton:active {
+  transform: translateY(0);
+}
+
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 13px 24px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.secondaryButton:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+  color: #0f172a;
+  transform: translateY(-2px);
+}
+
+/* Trust Row */
+.trustRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #64748b;
+  font-size: 13px;
+  padding-top: 18px;
+  border-top: 1px solid #e2e8f0;
+  width: 100%;
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.trustStar {
+  color: #f59e0b;
+  font-size: 14px;
+}
+
+.trustDivider {
+  color: #cbd5e1;
+}
+
+/* Right Visual */
+.heroVisual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.imageCard {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 16px;
+  overflow: visible;
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.18), 0 8px 16px -6px rgba(15, 23, 42, 0.1);
+  border: 4px solid #ffffff;
+}
+
+/* Floating Badges */
+.floatingBadge {
+  position: absolute;
+  bottom: -18px;
+  left: -20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.floatingTag {
+  color: #ef4444;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.floatingTitle {
+  color: #0f172a;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.floatingSub {
+  color: #64748b;
+  font-size: 11px;
+}
+
+.verifiedBadge {
+  position: absolute;
+  top: 14px;
+  right: -12px;
+  background: #ffffff;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #0f172a;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Responsive Queries */
+@media (max-width: 1024px) {
+  .heroContainer {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 40px 32px;
   }
 
-  .heroContent h1 {
-    font-size: 32px;
+  .headline {
+    font-size: 36px;
+  }
+
+  .heroVisual {
+    order: -1;
+  }
+
+  .imageCard {
+    max-width: 100%;
+  }
+
+  .heroImage {
+    max-height: 320px;
+  }
+
+  .floatingBadge {
+    left: 12px;
+    bottom: -12px;
+  }
+
+  .verifiedBadge {
+    right: 12px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .hero {
-    min-height: 260px;
+    margin: 20px 0 36px;
+    border-radius: 16px;
+  }
+
+  .heroContainer {
     padding: 28px 20px;
   }
 
-  .heroContent h1 {
+  .headline {
     font-size: 28px;
   }
 
   .description {
     font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .ctaGroup {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .trustRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .trustDivider {
+    display: none;
   }
 }

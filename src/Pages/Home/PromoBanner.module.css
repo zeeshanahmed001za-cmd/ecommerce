@@ -1,0 +1,254 @@
+/* Promo Banner */
+.promoBanner {
+  margin: 56px 0;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.2);
+}
+
+.promoContainer {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 40px;
+  padding: 48px 52px;
+}
+
+/* Left Content */
+.promoContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.badgeRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.promoTag {
+  background-color: #ef4444;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.timerBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.heading {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: -0.03em;
+}
+
+.description {
+  color: #cbd5e1;
+  font-size: 15px;
+  line-height: 1.65;
+  margin-bottom: 24px;
+  max-width: 480px;
+}
+
+.description strong {
+  color: #fbbf24;
+}
+
+/* Coupon Box */
+.couponBox {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin-bottom: 28px;
+}
+
+.couponLabel {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.couponCode {
+  font-family: monospace;
+  font-size: 15px;
+  font-weight: 700;
+  color: #60a5fa;
+  letter-spacing: 0.1em;
+}
+
+/* CTA */
+.ctaRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.primaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  transition: all 0.2s ease;
+}
+
+.primaryBtn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.45);
+}
+
+.termsNote {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* Right Media */
+.promoImageWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.promoImage {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.promoBanner:hover .promoImage {
+  transform: scale(1.02);
+}
+
+/* Floating discount circular badge */
+.discountFloatingBadge {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.4);
+  border: 3px solid #ffffff;
+  animation: pulseBadge 2.5s infinite;
+}
+
+.discountNum {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.discountTxt {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+@keyframes pulseBadge {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .promoContainer {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 40px 32px;
+  }
+
+  .heading {
+    font-size: 30px;
+  }
+
+  .promoImageWrapper {
+    max-width: 520px;
+    width: 100%;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .promoBanner {
+    margin: 40px 0;
+    border-radius: 16px;
+  }
+
+  .promoContainer {
+    padding: 28px 20px;
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .discountFloatingBadge {
+    width: 60px;
+    height: 60px;
+    top: -10px;
+    right: -10px;
+  }
+
+  .discountNum {
+    font-size: 16px;
+  }
+
+  .discountTxt {
+    font-size: 9px;
+  }
+}
