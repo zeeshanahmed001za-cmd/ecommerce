@@ -1,6 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import styles from "./NavBar.module.css";
-import { useCategory, SECONDARY_CATEGORIES } from "../ContextProvider/CategoryContext.jsx";
+import {
+  useCategory,
+  SECONDARY_CATEGORIES,
+} from "../ContextProvider/CategoryContext.jsx";
 
 function Navbar() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -48,7 +51,10 @@ function Navbar() {
   // Close dropdown on outside click or Escape key
   useEffect(() => {
     function handleClickOutside(event) {
-      if (accountMenuRef.current && !accountMenuRef.current.contains(event.target)) {
+      if (
+        accountMenuRef.current &&
+        !accountMenuRef.current.contains(event.target)
+      ) {
         setAccountMenuOpen(false);
       }
     }
@@ -103,13 +109,15 @@ function Navbar() {
   };
 
   return (
-    <header className={`${styles.header} ${navVisible ? "" : styles.headerHidden}`}>
+    <header
+      className={`${styles.header} ${navVisible ? "" : styles.headerHidden}`}
+    >
       {/* 1. Main Navigation Bar */}
       <nav className={styles.navbar} aria-label="Main Navigation">
         <div className={styles.navContainer}>
           {/* Brand / Logo Area */}
           <div className={styles.navBrandArea}>
-            <a href="/" className={styles.logo} aria-label="ShopEase Home">
+            <a href="/" className={styles.logo} aria-label="Horizon Home">
               <div className={styles.logoIcon} aria-hidden="true">
                 <svg
                   width="20"
@@ -126,7 +134,7 @@ function Navbar() {
                   <path d="M16 10a4 4 0 0 1-8 0" />
                 </svg>
               </div>
-              <span className={styles.logoText}>ShopEase</span>
+              <span className={styles.logoText}>Horizon</span>
             </a>
           </div>
 
@@ -135,7 +143,7 @@ function Navbar() {
             <form
               className={styles.searchForm}
               role="search"
-              aria-label="Search ShopEase"
+              aria-label="Search Horizon"
               onSubmit={handleSearchSubmit}
             >
               <div className={styles.searchContainer}>
@@ -228,14 +236,18 @@ function Navbar() {
                   {/* Header Callout */}
                   <div className={styles.popoverHeader}>
                     <div className={styles.popoverGreeting}>
-                      <span className={styles.popoverGreetingTitle}>Your ShopEase Account</span>
-                      <span className={styles.popoverGreetingSubtitle}>Access orders, lists, and personalized perks</span>
+                      <span className={styles.popoverGreetingTitle}>
+                        Your Horizon Account
+                      </span>
+                      <span className={styles.popoverGreetingSubtitle}>
+                        Access orders, lists, and personalized perks
+                      </span>
                     </div>
                     <a href="#signin" className={styles.signInButton}>
                       Sign In
                     </a>
                     <p className={styles.registerPrompt}>
-                      New to ShopEase?{" "}
+                      New to Horizon?{" "}
                       <a href="#register" className={styles.registerLink}>
                         Create an account
                       </a>
@@ -259,7 +271,10 @@ function Navbar() {
                           </a>
                         </li>
                         <li>
-                          <a href="#recommendations" className={styles.popoverLink}>
+                          <a
+                            href="#recommendations"
+                            className={styles.popoverLink}
+                          >
                             Recommendations
                           </a>
                         </li>
@@ -271,7 +286,10 @@ function Navbar() {
                       </ul>
                     </div>
 
-                    <div className={styles.categoryDivider} aria-hidden="true" />
+                    <div
+                      className={styles.categoryDivider}
+                      aria-hidden="true"
+                    />
 
                     {/* Category: Your Lists */}
                     <div className={styles.popoverCategory}>
@@ -343,19 +361,33 @@ function Navbar() {
               type="button"
               className={styles.mobileMenuToggle}
               onClick={() => setMobileMenuOpen((prev) => !prev)}
-              aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-label={
+                mobileMenuOpen
+                  ? "Close navigation menu"
+                  : "Open navigation menu"
+              }
               aria-expanded={mobileMenuOpen}
             >
-              <span className={`${styles.hamburgerBar} ${mobileMenuOpen ? styles.barOpen1 : ""}`} />
-              <span className={`${styles.hamburgerBar} ${mobileMenuOpen ? styles.barOpen2 : ""}`} />
-              <span className={`${styles.hamburgerBar} ${mobileMenuOpen ? styles.barOpen3 : ""}`} />
+              <span
+                className={`${styles.hamburgerBar} ${mobileMenuOpen ? styles.barOpen1 : ""}`}
+              />
+              <span
+                className={`${styles.hamburgerBar} ${mobileMenuOpen ? styles.barOpen2 : ""}`}
+              />
+              <span
+                className={`${styles.hamburgerBar} ${mobileMenuOpen ? styles.barOpen3 : ""}`}
+              />
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className={styles.mobileNav} role="region" aria-label="Mobile Navigation Menu">
+          <div
+            className={styles.mobileNav}
+            role="region"
+            aria-label="Mobile Navigation Menu"
+          >
             {/* Mobile Search Input */}
             <form
               className={styles.mobileSearchForm}
@@ -397,14 +429,23 @@ function Navbar() {
             {/* User Account Callout */}
             <div className={styles.mobileUserCallout}>
               <div className={styles.mobileUserAvatar} aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                   <circle cx="12" cy="7" r="4" />
                 </svg>
               </div>
               <div className={styles.mobileUserInfo}>
                 <span className={styles.mobileGreeting}>Hello, Sign In</span>
-                <a href="#signin" className={styles.mobileSignInLink}>Sign in to your account</a>
+                <a href="#signin" className={styles.mobileSignInLink}>
+                  Sign in to your account
+                </a>
               </div>
             </div>
 
@@ -423,7 +464,9 @@ function Navbar() {
                       }}
                     >
                       <span>{cat.name}</span>
-                      {selectedCategory === cat.id && <span className={styles.activeCheck}>✓</span>}
+                      {selectedCategory === cat.id && (
+                        <span className={styles.activeCheck}>✓</span>
+                      )}
                     </button>
                   </li>
                 ))}
@@ -434,10 +477,29 @@ function Navbar() {
             <div className={styles.mobileSection}>
               <h4 className={styles.mobileSectionHeading}>Your Account</h4>
               <ul className={styles.mobileLinks}>
-                <li><a href="#account" onClick={() => setMobileMenuOpen(false)}>Your Account</a></li>
-                <li><a href="#orders" onClick={() => setMobileMenuOpen(false)}>Orders</a></li>
-                <li><a href="#recommendations" onClick={() => setMobileMenuOpen(false)}>Recommendations</a></li>
-                <li><a href="#settings" onClick={() => setMobileMenuOpen(false)}>Account Settings</a></li>
+                <li>
+                  <a href="#account" onClick={() => setMobileMenuOpen(false)}>
+                    Your Account
+                  </a>
+                </li>
+                <li>
+                  <a href="#orders" onClick={() => setMobileMenuOpen(false)}>
+                    Orders
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#recommendations"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Recommendations
+                  </a>
+                </li>
+                <li>
+                  <a href="#settings" onClick={() => setMobileMenuOpen(false)}>
+                    Account Settings
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -445,9 +507,30 @@ function Navbar() {
             <div className={styles.mobileSection}>
               <h4 className={styles.mobileSectionHeading}>Your Lists</h4>
               <ul className={styles.mobileLinks}>
-                <li><a href="#create-list" onClick={() => setMobileMenuOpen(false)}>Create a List</a></li>
-                <li><a href="#your-lists" onClick={() => setMobileMenuOpen(false)}>Your Lists</a></li>
-                <li><a href="#saved-items" onClick={() => setMobileMenuOpen(false)}>Saved Items</a></li>
+                <li>
+                  <a
+                    href="#create-list"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Create a List
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#your-lists"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Your Lists
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#saved-items"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Saved Items
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -455,8 +538,16 @@ function Navbar() {
             <div className={styles.mobileSection}>
               <h4 className={styles.mobileSectionHeading}>Orders &amp; Cart</h4>
               <ul className={styles.mobileLinks}>
-                <li><a href="#orders" onClick={() => setMobileMenuOpen(false)}>Returns &amp; Orders</a></li>
-                <li><a href="#cart" onClick={() => setMobileMenuOpen(false)}>Shopping Cart (3 items)</a></li>
+                <li>
+                  <a href="#orders" onClick={() => setMobileMenuOpen(false)}>
+                    Returns &amp; Orders
+                  </a>
+                </li>
+                <li>
+                  <a href="#cart" onClick={() => setMobileMenuOpen(false)}>
+                    Shopping Cart (3 items)
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -464,7 +555,11 @@ function Navbar() {
       </nav>
 
       {/* 2. Secondary Sticky Category Bar Directly Below Main Navbar */}
-      <div className={styles.secondaryBar} role="navigation" aria-label="Secondary Category Navigation">
+      <div
+        className={styles.secondaryBar}
+        role="navigation"
+        aria-label="Secondary Category Navigation"
+      >
         <div className={styles.secondaryContainer}>
           <ul className={styles.secondaryList} role="menubar">
             {SECONDARY_CATEGORIES.map((cat) => {
@@ -498,7 +593,12 @@ function Navbar() {
                       </svg>
                     )}
                     {cat.isHighlight && (
-                      <span className={styles.highlightBadge} aria-hidden="true">★</span>
+                      <span
+                        className={styles.highlightBadge}
+                        aria-hidden="true"
+                      >
+                        ★
+                      </span>
                     )}
                     <span>{cat.name}</span>
                   </button>
@@ -509,7 +609,9 @@ function Navbar() {
 
           <div className={styles.secondaryPromo} aria-hidden="true">
             <span className={styles.promoBadge}>Offer</span>
-            <span className={styles.promoText}>Free Express Delivery over ₹499</span>
+            <span className={styles.promoText}>
+              Free Express Delivery over ₹499
+            </span>
           </div>
         </div>
       </div>
