@@ -11,7 +11,10 @@ function PromoBanner() {
         {/* Left Column: Promotional Content */}
         <div className={styles.promoContent}>
           <div className={styles.badgeRow}>
-            <span className={styles.promoTag}>LIMITED TIME OFFER</span>
+            <span className={styles.discountBadge}>
+              <span className={styles.badgeDot} aria-hidden="true"></span>
+              Save Up To 15% OFF
+            </span>
             <div
               className={styles.timerBadge}
               role="timer"
@@ -32,10 +35,9 @@ function PromoBanner() {
           </h2>
 
           <p className={styles.description}>
-            Immerse yourself in rich, crystal-clear audio with our premium
-            wireless headphones. Perfect for music, podcasts, and studio
-            sessions. Get <strong>15% OFF</strong> on top-rated headphones and
-            audio accessories this season.
+            Experience rich, immersive acoustics and wireless freedom. Enjoy{" "}
+            <strong className={styles.discountHighlight}>up to 15% OFF</strong> on
+            premium headphones and studio audio gear.
           </p>
 
           <div
@@ -71,24 +73,15 @@ function PromoBanner() {
           </div>
         </div>
 
-        {/* Right Column: Visual Media & Discount Badge */}
+        {/* Right Column: Visual Media */}
         <div className={styles.promoImageWrapper}>
           <div className={styles.imageCard}>
             <img
-              src="/images/promo-headphones.jpg"
-              alt="Woman wearing premium headphones while recording music in a cozy studio"
+              src="/images/promo-banner.jpg"
+              alt="Woman wearing premium wireless headphones enjoying music in studio"
               className={styles.promoImage}
               loading="lazy"
             />
-            {/* Redesigned Discount Badge */}
-            <div
-              className={styles.discountFloatingBadge}
-              aria-label="Special offer: 15 percent off discount"
-            >
-              <span className={styles.discountNum}>15%</span>
-              <span className={styles.discountDivider}></span>
-              <span className={styles.discountTxt}>OFF</span>
-            </div>
           </div>
         </div>
       </div>
