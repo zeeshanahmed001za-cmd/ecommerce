@@ -53,17 +53,6 @@
   flex-shrink: 0;
 }
 
-.countTag {
-  display: inline-block;
-  padding: 6px 14px;
-  border-radius: 9999px;
-  background-color: #f1f5f9;
-  color: #475569;
-  font-size: 13px;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
 /* Desktop Carousel Navigation Arrows */
 .carouselNav {
   display: flex;

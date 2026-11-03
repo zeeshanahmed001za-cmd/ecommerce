@@ -4,20 +4,20 @@ import styles from "./BestSellers.module.css";
 // Friendly, retail-ready category display labels
 const CATEGORY_DISPLAY_LABELS = {
   "mobile-accessories": "Electronics",
-  "smartphones": "Electronics",
-  "laptops": "Tech & Laptops",
-  "tablets": "Tablets",
+  smartphones: "Electronics",
+  laptops: "Tech & Laptops",
+  tablets: "Tablets",
   "sports-accessories": "Sports & Fitness",
   "mens-shoes": "Footwear",
   "womens-shoes": "Footwear",
   "mens-watches": "Watches",
   "womens-watches": "Watches",
-  "sunglasses": "Eyewear",
+  sunglasses: "Eyewear",
   "womens-bags": "Bags & Accessories",
   "home-decoration": "Home & Living",
-  "furniture": "Home & Living",
-  "fragrances": "Fragrances",
-  "beauty": "Beauty",
+  furniture: "Home & Living",
+  fragrances: "Fragrances",
+  beauty: "Beauty",
   "skin-care": "Skincare",
   "mens-shirts": "Fashion",
   "womens-dresses": "Fashion",
@@ -102,7 +102,9 @@ function BestSellers({ category = "all" }) {
 
         const response = await fetch(url);
         if (!response.ok) {
-          throw new Error("Unable to load products. Please check your connection.");
+          throw new Error(
+            "Unable to load products. Please check your connection.",
+          );
         }
 
         const data = await response.json();
@@ -131,7 +133,9 @@ function BestSellers({ category = "all" }) {
           // 2. Select top product per priority category for balanced variety
           for (const cat of PRIORITY_CATEGORIES) {
             if (categoryGroups[cat] && categoryGroups[cat].length > 0) {
-              categoryGroups[cat].sort((a, b) => (b.rating || 0) - (a.rating || 0));
+              categoryGroups[cat].sort(
+                (a, b) => (b.rating || 0) - (a.rating || 0),
+              );
               curatedList.push(categoryGroups[cat][0]);
             }
           }
@@ -140,7 +144,9 @@ function BestSellers({ category = "all" }) {
           if (curatedList.length < 5) {
             const remaining = rawProducts
               .filter(
-                (p) => !EXCLUDED_CATEGORIES.has(p.category) && (p.rating || 0) >= 4.0
+                (p) =>
+                  !EXCLUDED_CATEGORIES.has(p.category) &&
+                  (p.rating || 0) >= 4.0,
               )
               .sort((a, b) => (b.rating || 0) - (a.rating || 0));
 
@@ -163,7 +169,10 @@ function BestSellers({ category = "all" }) {
         setProducts(curatedList);
       } catch (err) {
         if (!isCancelled) {
-          setError(err.message || "Failed to load products. Please check your connection.");
+          setError(
+            err.message ||
+              "Failed to load products. Please check your connection.",
+          );
         }
       } finally {
         if (!isCancelled) {
@@ -246,7 +255,8 @@ function BestSellers({ category = "all" }) {
             <p className={styles.sectionEyebrow}>CUSTOMER FAVORITES</p>
             <h2 className={styles.sectionTitle}>Best Sellers</h2>
             <p className={styles.sectionSubtitle}>
-              Curated top-rated picks across electronics, fashion, home, and accessories
+              Curated top-rated picks across electronics, fashion, home, and
+              accessories
             </p>
           </div>
         </div>
@@ -256,9 +266,15 @@ function BestSellers({ category = "all" }) {
             <div className={styles.skeletonCard} key={index}>
               <div className={styles.skeletonImage} />
               <div className={styles.skeletonInfo}>
-                <div className={`${styles.skeletonLine} ${styles.skeletonLineShort}`} />
-                <div className={`${styles.skeletonLine} ${styles.skeletonLineTitle}`} />
-                <div className={`${styles.skeletonLine} ${styles.skeletonLinePrice}`} />
+                <div
+                  className={`${styles.skeletonLine} ${styles.skeletonLineShort}`}
+                />
+                <div
+                  className={`${styles.skeletonLine} ${styles.skeletonLineTitle}`}
+                />
+                <div
+                  className={`${styles.skeletonLine} ${styles.skeletonLinePrice}`}
+                />
                 <div className={styles.skeletonButton} />
               </div>
             </div>
@@ -274,7 +290,11 @@ function BestSellers({ category = "all" }) {
         <div id="featured" className={styles.anchorOffset} aria-hidden="true" />
         <div className={styles.errorState} role="alert">
           <p className={styles.errorMessage}>{error}</p>
-          <button type="button" className={styles.retryButton} onClick={handleRetry}>
+          <button
+            type="button"
+            className={styles.retryButton}
+            onClick={handleRetry}
+          >
             Try Again
           </button>
         </div>
@@ -287,8 +307,14 @@ function BestSellers({ category = "all" }) {
       <section className={styles.bestSellers} id="bestsellers">
         <div id="featured" className={styles.anchorOffset} aria-hidden="true" />
         <div className={styles.emptyState}>
-          <p className={styles.emptyMessage}>No products currently available in this selection.</p>
-          <button type="button" className={styles.retryButton} onClick={handleRetry}>
+          <p className={styles.emptyMessage}>
+            No products currently available in this selection.
+          </p>
+          <button
+            type="button"
+            className={styles.retryButton}
+            onClick={handleRetry}
+          >
             Refresh Selection
           </button>
         </div>
@@ -312,15 +338,18 @@ function BestSellers({ category = "all" }) {
             Best Sellers
           </h2>
           <p className={styles.sectionSubtitle}>
-            Top-rated picks across electronics, sports, fashion, home, and accessories
+            Top-rated picks across electronics, sports, fashion, home, and
+            accessories
           </p>
         </div>
 
         <div className={styles.headerActions}>
-          <span className={styles.countTag}>{products.length} Products</span>
-
           {/* Desktop Navigation Arrows */}
-          <div className={styles.carouselNav} role="group" aria-label="Carousel navigation">
+          <div
+            className={styles.carouselNav}
+            role="group"
+            aria-label="Carousel navigation"
+          >
             <button
               type="button"
               className={styles.navButton}
