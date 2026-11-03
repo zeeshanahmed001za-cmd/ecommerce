@@ -171,7 +171,7 @@
   width: 100%;
   max-width: 480px;
   border-radius: 14px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .promoImage {
@@ -183,37 +183,52 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Floating Discount Badge */
+/* ─── Redesigned Floating Discount Badge ─── */
 .discountFloatingBadge {
   position: absolute;
-  top: -14px;
-  right: -14px;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #ef4444, #dc2626);
-  color: #ffffff;
+  top: -18px;
+  right: -18px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
-  border: 3px solid #ffffff;
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #f59e0b, #d97706);
+  color: #ffffff;
+  box-shadow:
+    0 4px 20px rgba(245, 158, 11, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  z-index: 2;
 }
 
 .discountNum {
-  font-size: 20px;
-  font-weight: 800;
+  font-size: 21px;
+  font-weight: 900;
   line-height: 1;
+  letter-spacing: -0.02em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.discountDivider {
+  width: 24px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 1px;
+  margin: 3px 0 2px;
 }
 
 .discountTxt {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsive: Tablet */
+/* ─── Responsive: Tablet ─── */
 @media (max-width: 1024px) {
   .promoContainer {
     grid-template-columns: 1fr;
@@ -236,7 +251,7 @@
   }
 }
 
-/* Responsive: Mobile */
+/* ─── Responsive: Mobile ─── */
 @media (max-width: 640px) {
   .promoBanner {
     margin: 36px 0;
@@ -269,14 +284,18 @@
   }
 
   .discountFloatingBadge {
-    width: 58px;
-    height: 58px;
-    top: -10px;
-    right: -10px;
+    width: 62px;
+    height: 62px;
+    top: -12px;
+    right: -12px;
   }
 
   .discountNum {
-    font-size: 16px;
+    font-size: 17px;
+  }
+
+  .discountDivider {
+    width: 18px;
   }
 
   .discountTxt {
