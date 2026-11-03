@@ -1,11 +1,10 @@
-/* Promo Banner */
+/* PromoBanner Section */
 .promoBanner {
   margin: 56px 0;
-  border-radius: 20px;
+  border-radius: 16px;
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   color: #ffffff;
   overflow: hidden;
-  box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.2);
 }
 
 .promoContainer {
@@ -13,7 +12,7 @@
   grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
   gap: 40px;
-  padding: 48px 52px;
+  padding: 48px 48px;
 }
 
 /* Left Content */
@@ -21,9 +20,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  z-index: 2;
 }
 
+/* Badge Row */
 .badgeRow {
   display: flex;
   align-items: center;
@@ -47,18 +46,33 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 4px 12px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 5px 14px;
   border-radius: 9999px;
   font-size: 12px;
   font-weight: 600;
-  color: #f1f5f9;
+  color: #e2e8f0;
 }
 
+.clockIcon {
+  font-size: 13px;
+}
+
+.timerLabel {
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.timeValue {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
+/* Heading & Description */
 .heading {
-  font-size: 38px;
+  font-size: 36px;
   font-weight: 800;
   line-height: 1.2;
   color: #ffffff;
@@ -84,7 +98,7 @@
   align-items: center;
   gap: 10px;
   background-color: rgba(255, 255, 255, 0.06);
-  border: 1px dashed rgba(255, 255, 255, 0.25);
+  border: 1px dashed rgba(255, 255, 255, 0.2);
   padding: 8px 16px;
   border-radius: 8px;
   margin-bottom: 28px;
@@ -96,14 +110,14 @@
 }
 
 .couponCode {
-  font-family: monospace;
+  font-family: "SF Mono", "Fira Code", "Cascadia Code", monospace;
   font-size: 15px;
   font-weight: 700;
   color: #60a5fa;
   letter-spacing: 0.1em;
 }
 
-/* CTA */
+/* CTA Row */
 .ctaRow {
   display: flex;
   align-items: center;
@@ -122,13 +136,22 @@
   font-weight: 600;
   border-radius: 10px;
   box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .primaryBtn:hover {
   background-color: #1d4ed8;
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(37, 99, 235, 0.45);
+}
+
+.primaryBtn:active {
+  transform: translateY(0);
+}
+
+.primaryBtn:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 3px;
 }
 
 .termsNote {
@@ -138,10 +161,17 @@
 
 /* Right Media */
 .promoImageWrapper {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.imageCard {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 14px;
+  overflow: hidden;
 }
 
 .promoImage {
@@ -149,23 +179,17 @@
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.promoBanner:hover .promoImage {
-  transform: scale(1.02);
-}
-
-/* Floating discount circular badge */
+/* Floating Discount Badge */
 .discountFloatingBadge {
   position: absolute;
-  top: -16px;
-  right: -16px;
-  width: 72px;
-  height: 72px;
+  top: -14px;
+  right: -14px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   background: linear-gradient(135deg, #ef4444, #dc2626);
   color: #ffffff;
@@ -173,9 +197,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.4);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
   border: 3px solid #ffffff;
-  animation: pulseBadge 2.5s infinite;
 }
 
 .discountNum {
@@ -190,26 +213,16 @@
   letter-spacing: 0.05em;
 }
 
-@keyframes pulseBadge {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.06);
-  }
-}
-
-/* Responsive */
+/* Responsive: Tablet */
 @media (max-width: 1024px) {
   .promoContainer {
     grid-template-columns: 1fr;
-    gap: 36px;
-    padding: 40px 32px;
+    gap: 32px;
+    padding: 36px 28px;
   }
 
   .heading {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   .promoImageWrapper {
@@ -217,29 +230,47 @@
     width: 100%;
     margin-inline: auto;
   }
+
+  .imageCard {
+    max-width: 100%;
+  }
 }
 
+/* Responsive: Mobile */
 @media (max-width: 640px) {
   .promoBanner {
-    margin: 40px 0;
-    border-radius: 16px;
+    margin: 36px 0;
+    border-radius: 14px;
   }
 
   .promoContainer {
-    padding: 28px 20px;
+    padding: 24px 18px;
+    gap: 24px;
   }
 
   .heading {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .description {
     font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .ctaRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .primaryBtn {
+    width: 100%;
+    justify-content: center;
   }
 
   .discountFloatingBadge {
-    width: 60px;
-    height: 60px;
+    width: 58px;
+    height: 58px;
     top: -10px;
     right: -10px;
   }
