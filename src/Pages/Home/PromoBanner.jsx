@@ -31,25 +31,24 @@ function PromoBanner() {
           </div>
 
           <h2 id="promo-heading" className={styles.heading}>
-            Studio-Grade Sound, Wherever You Go
+            Premium Headphones — Now 15% Off
           </h2>
 
           <p className={styles.description}>
-            Experience rich, immersive acoustics and wireless freedom. Enjoy{" "}
-            <strong className={styles.discountHighlight}>up to 15% OFF</strong> on
-            premium headphones and studio audio gear.
+            Get 15% off on wireless headphones. Use code{" "}
+            <strong>AUDIO15</strong> at checkout.
           </p>
 
-          <div
-            className={styles.couponBox}
-            role="group"
-            aria-label="Promotional Discount Code"
-          >
-            <span className={styles.couponLabel}>Use Promo Code:</span>
-            <code className={styles.couponCode}>AUDIO15</code>
-          </div>
-
+          {/* Coupon + CTA side by side */}
           <div className={styles.ctaRow}>
+            <div
+              className={styles.couponBox}
+              role="group"
+              aria-label="Promotional Discount Code"
+            >
+              <span className={styles.couponLabel}>Promo Code:</span>
+              <code className={styles.couponCode}>AUDIO15</code>
+            </div>
             <a href="#bestsellers" className={styles.primaryBtn}>
               <span>Shop Headphones</span>
               <svg
@@ -67,9 +66,6 @@ function PromoBanner() {
                 <path d="m12 5 7 7-7 7" />
               </svg>
             </a>
-            <span className={styles.termsNote}>
-              *Discounts apply automatically at checkout
-            </span>
           </div>
         </div>
 
@@ -78,7 +74,7 @@ function PromoBanner() {
           <div className={styles.imageCard}>
             <img
               src="/images/promo-banner.jpg"
-              alt="Woman wearing premium wireless headphones enjoying music in studio"
+              alt="Woman wearing premium wireless headphones enjoying music"
               className={styles.promoImage}
               loading="lazy"
             />

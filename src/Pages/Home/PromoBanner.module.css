@@ -99,21 +99,28 @@
   max-width: 480px;
 }
 
-.discountHighlight {
+.description strong {
   color: #60a5fa;
   font-weight: 700;
 }
 
-/* Coupon Box */
+/* CTA Row — coupon + button side by side */
+.ctaRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Coupon Box (inside ctaRow) */
 .couponBox {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   background-color: rgba(255, 255, 255, 0.06);
   border: 1px dashed rgba(255, 255, 255, 0.2);
-  padding: 8px 16px;
-  border-radius: 8px;
-  margin-bottom: 28px;
+  padding: 10px 16px;
+  border-radius: 10px;
 }
 
 .couponLabel {
@@ -123,28 +130,21 @@
 
 .couponCode {
   font-family: "SF Mono", "Fira Code", "Cascadia Code", monospace;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   color: #60a5fa;
   letter-spacing: 0.1em;
 }
 
-/* CTA Row */
-.ctaRow {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
+/* Primary CTA Button */
 .primaryBtn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 13px 26px;
+  padding: 11px 24px;
   background-color: #2563eb;
   color: #ffffff;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   border-radius: 10px;
   box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
@@ -164,11 +164,6 @@
 .primaryBtn:focus-visible {
   outline: 2px solid #60a5fa;
   outline-offset: 3px;
-}
-
-.termsNote {
-  font-size: 12px;
-  color: #94a3b8;
 }
 
 /* Right Media */
@@ -247,8 +242,12 @@
 
   .ctaRow {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 12px;
+  }
+
+  .couponBox {
+    justify-content: center;
   }
 
   .primaryBtn {
