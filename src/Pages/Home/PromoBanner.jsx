@@ -31,12 +31,11 @@ function PromoBanner() {
           </div>
 
           <h2 id="promo-heading" className={styles.heading}>
-            Premium Headphones — Now 15% Off
+            Elevate Your Listening Experience – Save 15%
           </h2>
 
           <p className={styles.description}>
-            Get 15% off on wireless headphones. Use code{" "}
-            <strong>AUDIO15</strong> at checkout.
+            Discover exceptional sound quality and seamless wireless connectivity. Explore our premium headphone collection and enjoy up to <strong>15% off</strong> selected models.
           </p>
 
           {/* Coupon + CTA side by side */}
@@ -73,8 +72,8 @@ function PromoBanner() {
         <div className={styles.promoImageWrapper}>
           <div className={styles.imageCard}>
             <img
-              src="/images/promo-banner.jpg"
-              alt="Woman wearing premium wireless headphones enjoying music"
+              src="/images/promoimage.jpg"
+              alt="Joyful woman enjoying music with wireless headphones outdoors"
               className={styles.promoImage}
               loading="lazy"
             />

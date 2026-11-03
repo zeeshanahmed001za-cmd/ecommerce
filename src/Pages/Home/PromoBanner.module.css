@@ -148,7 +148,10 @@
   font-weight: 600;
   border-radius: 10px;
   box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
-  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .primaryBtn:hover {
@@ -185,11 +188,11 @@
 .promoImage {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 10;
   object-fit: cover;
-  object-position: center 25%;
+  object-position: center 48%;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.4s ease;
 }
 
 /* ─── Responsive: Tablet ─── */
@@ -215,7 +218,7 @@
   }
 
   .promoImage {
-    object-position: center 25%;
+    object-position: center 48%;
   }
 }
 
@@ -256,7 +259,7 @@
   }
 
   .promoImage {
-    aspect-ratio: 16 / 11;
-    object-position: center 22%;
+    aspect-ratio: 16 / 10;
+    object-position: center 48%;
   }
 }
