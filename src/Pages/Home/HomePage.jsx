@@ -1,5 +1,6 @@
 import { useCategory } from "../../ContextProvider/CategoryContext.jsx";
 import HeroBanner from "./HeroBanner.jsx";
+import ShopByCategory from "./ShopByCategory.jsx";
 import BestSellers from "./BestSellers.jsx";
 import PromoBanner from "./PromoBanner.jsx";
 import Newsletter from "./Newsletter.jsx";
@@ -10,6 +11,7 @@ function HomePage() {
   return (
     <div className="container">
       <HeroBanner />
+      <ShopByCategory />
       <BestSellers category={selectedCategory} />
       <PromoBanner />
       <Newsletter />

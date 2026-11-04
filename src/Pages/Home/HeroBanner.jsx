@@ -35,7 +35,7 @@ function HeroBanner() {
               </svg>
             </a>
 
-            <a href="#deals" className={styles.secondaryButton}>
+            <a href="#categories" className={styles.secondaryButton}>
               Explore Categories
             </a>
           </div>
