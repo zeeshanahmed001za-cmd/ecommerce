@@ -18,7 +18,7 @@ function Newsletter() {
       <div className={styles.card}>
         <div className={styles.content}>
           <span className={styles.tag}>EXCLUSIVE PERKS</span>
-          <h2 className={styles.title}>Join the Horizon Club & Get 15% Off</h2>
+          <h2 className={styles.title}>Join the Astra Club & Get 15% Off</h2>
           <p className={styles.subtitle}>
             Subscribe for early access to flash sales, exclusive discount drops, and product
             curations delivered right to your inbox.

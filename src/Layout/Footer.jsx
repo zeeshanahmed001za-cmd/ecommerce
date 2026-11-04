@@ -25,7 +25,7 @@ function Footer() {
                   <path d="M16 10a4 4 0 0 1-8 0" />
                 </svg>
               </div>
-              <span className={styles.logoText}>Horizon</span>
+              <span className={styles.logoText}>Astra</span>
             </div>
 
             <p className={styles.brandTagline}>
@@ -80,8 +80,8 @@ function Footer() {
               <span className={styles.contactIcon}>✉️</span>
               <div>
                 <p className={styles.contactLabel}>Email Support</p>
-                <a href="mailto:support@horizon.com" className={styles.contactVal}>
-                  support@horizon.com
+                <a href="mailto:support@astra.com" className={styles.contactVal}>
+                  support@astra.com
                 </a>
               </div>
             </div>
@@ -107,7 +107,7 @@ function Footer() {
         {/* Bottom Bar: Copyright & Payment Badges */}
         <div className={styles.bottomBar}>
           <p className={styles.copyright}>
-            © 2026 <strong>Horizon, Inc.</strong> All rights reserved. Crafted with care for modern
+            © 2026 <strong>Astra, Inc.</strong> All rights reserved. Crafted with care for modern
             shoppers.
           </p>
 

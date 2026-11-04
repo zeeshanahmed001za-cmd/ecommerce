@@ -117,7 +117,7 @@ function Navbar() {
         <div className={styles.navContainer}>
           {/* Brand / Logo Area */}
           <div className={styles.navBrandArea}>
-            <a href="/" className={styles.logo} aria-label="Horizon Home">
+            <a href="/" className={styles.logo} aria-label="Astra Home">
               <div className={styles.logoIcon} aria-hidden="true">
                 <svg
                   width="20"
@@ -134,7 +134,7 @@ function Navbar() {
                   <path d="M16 10a4 4 0 0 1-8 0" />
                 </svg>
               </div>
-              <span className={styles.logoText}>Horizon</span>
+              <span className={styles.logoText}>Astra</span>
             </a>
           </div>
 
@@ -143,7 +143,7 @@ function Navbar() {
             <form
               className={styles.searchForm}
               role="search"
-              aria-label="Search Horizon"
+              aria-label="Search Astra"
               onSubmit={handleSearchSubmit}
             >
               <div className={styles.searchContainer}>
@@ -237,7 +237,7 @@ function Navbar() {
                   <div className={styles.popoverHeader}>
                     <div className={styles.popoverGreeting}>
                       <span className={styles.popoverGreetingTitle}>
-                        Your Horizon Account
+                        Your Astra Account
                       </span>
                       <span className={styles.popoverGreetingSubtitle}>
                         Access orders, lists, and personalized perks
@@ -247,7 +247,7 @@ function Navbar() {
                       Sign In
                     </a>
                     <p className={styles.registerPrompt}>
-                      New to Horizon?{" "}
+                      New to Astra?{" "}
                       <a href="#register" className={styles.registerLink}>
                         Create an account
                       </a>
