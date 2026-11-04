@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="astraFaviconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#astraFaviconGrad)" />
+  <g transform="translate(88, 78) scale(1.05)">
+    <polygon
+      points="36,94 306,12 241,281 158,325 112,215 13,180"
+      stroke="#ffffff"
+      stroke-width="24"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <polyline
+      points="13,180 25,172 218,108 158,325"
+      stroke="#ffffff"
+      stroke-width="22"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <polyline
+      points="112,215 169,162 147,255 158,325"
+      stroke="#ffffff"
+      stroke-width="20"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </g>
+</svg>
+
