@@ -27,7 +27,7 @@ function FeaturedProducts() {
 
     updateScrollState();
 
-    el.addEventListener("scroll", updateScrollState, { passive: true });
+    el.addEventListener("scroll", updateScrollState);
     window.addEventListener("resize", updateScrollState);
 
     return () => {
@@ -190,9 +190,8 @@ function FeaturedProducts() {
                 {/* Rating Row: rating value → 6 star icons → review count */}
                 <div
                   className={styles.ratingRow}
-                  aria-label={`Rated ${
-                    product.rating ? product.rating.toFixed(1) : "4.8"
-                  } out of 5 stars from ${product.reviewsCount || 120} reviews`}
+                  aria-label={`Rated ${product.rating ? product.rating.toFixed(1) : "4.8"
+                    } out of 5 stars from ${product.reviewsCount || 120} reviews`}
                 >
                   <span className={styles.ratingValue}>
                     {product.rating ? product.rating.toFixed(1) : "4.8"}
@@ -227,9 +226,8 @@ function FeaturedProducts() {
 
                   <button
                     type="button"
-                    className={`${styles.addToCartButton} ${
-                      isAdded ? styles.addedActive : ""
-                    }`}
+                    className={`${styles.addToCartButton} ${isAdded ? styles.addedActive : ""
+                      }`}
                     onClick={() => handleAddToCart(product.id)}
                     aria-label={`Add ${product.name} to cart`}
                   >
