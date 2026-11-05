@@ -1,36 +1,155 @@
-/* Modern Footer */
-.footer {
-  background-color: #0f172a;
-  color: #f8fafc;
-  padding: 64px 0 32px;
-  border-top: 1px solid #1e293b;
-  margin-top: 80px;
-}
+/* ==========================================================================
+   Astra Modern Redesigned Footer (Three-Row Architecture)
+   Target Height: ~70–80vh with fluid content expansion
+   ========================================================================== */
 
-.footerContainer {
+.footer {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  min-height: 75vh;
+  background-color: #0b1324;
+  color: #f8fafc;
+  margin-top: 80px;
+  border-top: 1px solid #1e293b;
+  position: relative;
+  width: 100%;
 }
 
-.grid {
+/* --------------------------------------------------------------------------
+   1. Back-to-Top Row
+   -------------------------------------------------------------------------- */
+.backToTop {
+  width: 100%;
+  padding: 16px 0;
+  background-color: #1e293b;
+  color: #cbd5e1;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.backToTop:hover {
+  background-color: #2b394f;
+  color: #ffffff;
+}
+
+.backToTop:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: -2px;
+}
+
+.backToTopText {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   2. Main Footer Content (3 Equal-Width Columns)
+   -------------------------------------------------------------------------- */
+.mainContent {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background-color: #0f172a;
+  padding: 68px 0;
+  width: 100%;
+}
+
+.mainContainer {
+  width: 100%;
+}
+
+.columnGrid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-  gap: 40px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 56px;
+  max-width: 1060px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-/* Brand Column */
-.brandCol {
+.column {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.logoRow {
+.columnHeading {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linkList li {
+  line-height: 1.4;
+}
+
+.linkList a {
+  color: #94a3b8;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.15s ease, transform 0.15s ease;
+  display: inline-block;
+}
+
+.linkList a:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.linkList a:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Brand and Preferences Row
+   -------------------------------------------------------------------------- */
+.brandPreferencesRow {
+  background-color: #0b1324;
+  border-top: 1px solid #1e293b;
+  padding: 40px 0 28px;
+  width: 100%;
+}
+
+.brandContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+/* Brand Identity */
+.brandIdentity {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 16px;
 }
 
 .logoIcon {
@@ -52,175 +171,224 @@
   letter-spacing: -0.03em;
 }
 
-.brandTagline {
-  color: #94a3b8;
-  font-size: 14px;
-  line-height: 1.6;
-  margin-bottom: 24px;
-  max-width: 300px;
-}
-
-.socialRow {
+/* Preferences Group (3 Dropdown Buttons) */
+.preferencesGroup {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
-.socialLink {
-  display: flex;
+.dropdownWrapper {
+  position: relative;
+}
+
+.dropdownButton {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
+  gap: 9px;
+  background-color: #111c35;
+  border: 1px solid #334155;
   border-radius: 8px;
-  background-color: #1e293b;
   color: #cbd5e1;
+  padding: 9px 14px;
+  font-family: var(--font-body);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 500;
+  cursor: pointer;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
-.socialLink:hover {
-  background-color: #2563eb;
+.dropdownButton:hover {
+  background-color: #18274a;
+  border-color: #3b82f6;
   color: #ffffff;
-  transform: translateY(-2px);
 }
 
-/* Columns */
-.col {
-  display: flex;
-  flex-direction: column;
-}
-
-.colHeading {
-  font-size: 15px;
-  font-weight: 700;
+.dropdownActive {
+  background-color: #18274a;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25);
   color: #ffffff;
-  letter-spacing: -0.01em;
-  margin-bottom: 18px;
 }
 
-.linkList {
-  display: flex;
-  flex-direction: column;
-  gap: 11px;
-  list-style: none;
-}
-
-.linkList a {
+.dropdownIcon {
   color: #94a3b8;
-  font-size: 14px;
-  transition: color 0.15s ease, transform 0.15s ease;
-  display: inline-block;
+  flex-shrink: 0;
+  transition: color 0.2s ease;
 }
 
-.linkList a:hover {
-  color: #ffffff;
-  transform: translateX(3px);
-}
-
-.saleLink {
-  color: #f87171 !important;
-  font-weight: 600;
-}
-
-.saleLink:hover {
-  color: #ef4444 !important;
-}
-
-/* Reach Us Column */
-.contactItem {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 14px;
-}
-
-.contactIcon {
-  font-size: 16px;
-  line-height: 1.4;
-}
-
-.contactLabel {
-  font-size: 11px;
-  color: #64748b;
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  margin-bottom: 2px;
-}
-
-.contactVal {
-  font-size: 13px;
-  color: #cbd5e1;
-  text-decoration: none;
-}
-
-.contactVal:hover {
+.dropdownButton:hover .dropdownIcon,
+.dropdownActive .dropdownIcon {
   color: #60a5fa;
 }
 
-/* Bottom Bar */
-.bottomBar {
+.dropdownValue {
+  color: inherit;
+}
+
+.chevronIcon {
+  color: #64748b;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, color 0.2s ease;
+  margin-left: 2px;
+}
+
+.chevronRotated {
+  transform: rotate(180deg);
+  color: #60a5fa;
+}
+
+/* Dropdown Menu Overlay */
+.dropdownMenu {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.45);
+  z-index: 60;
+  min-width: 200px;
+  padding: 6px;
+  list-style: none;
+  margin: 0;
+  animation: fadeInMenu 0.15s ease-out;
+}
+
+@keyframes fadeInMenu {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdownOption {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding-top: 24px;
-  border-top: 1px solid #1e293b;
-  flex-wrap: wrap;
-}
-
-.copyright {
-  color: #64748b;
+  padding: 9px 12px;
   font-size: 13px;
+  color: #cbd5e1;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
-.copyright strong {
+.dropdownOption:hover {
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
+.optionSelected {
+  color: #60a5fa;
+  font-weight: 600;
+  background-color: rgba(37, 99, 235, 0.12);
+}
+
+.checkIcon {
+  font-size: 12px;
+  color: #60a5fa;
+  margin-left: 10px;
+  font-weight: 700;
+}
+
+/* Sub-Brand / Copyright Line */
+.subBrandRow {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+}
+
+.copyrightText {
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.copyrightText strong {
   color: #94a3b8;
 }
 
-.paymentBadges {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.badgePill {
-  display: inline-block;
-  padding: 4px 10px;
-  background-color: #1e293b;
-  border: 1px solid #334155;
-  border-radius: 6px;
-  font-size: 11px;
-  font-weight: 700;
-  color: #cbd5e1;
-  letter-spacing: 0.05em;
-}
-
-/* Responsive */
+/* --------------------------------------------------------------------------
+   Responsive Layout (Desktop, Tablet, Mobile)
+   -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
+  .footer {
+    min-height: auto;
+  }
+
+  .mainContent {
+    padding: 56px 0;
+  }
+
+  .columnGrid {
     gap: 36px;
   }
+
+  .brandContainer {
+    gap: 28px;
+  }
 }
 
-@media (max-width: 640px) {
-  .footer {
-    padding: 48px 0 28px;
-    margin-top: 56px;
+@media (max-width: 768px) {
+  .mainContent {
+    padding: 48px 0;
   }
 
-  .grid {
+  .columnGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 36px;
+  }
+
+  .brandContainer {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .preferencesGroup {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 580px) {
+  .footer {
+    margin-top: 48px;
+  }
+
+  .mainContent {
+    padding: 40px 0;
+  }
+
+  .columnGrid {
     grid-template-columns: 1fr;
     gap: 32px;
   }
 
-  .bottomBar {
+  .preferencesGroup {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .dropdownWrapper {
+    width: 100%;
+  }
+
+  .dropdownButton {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .dropdownMenu {
+    width: 100%;
+    min-width: 100%;
   }
 }
