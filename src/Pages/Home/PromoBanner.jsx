@@ -73,7 +73,7 @@ function PromoBanner() {
           <div className={styles.imageCard}>
             <img
               src="/images/promoimage.jpg"
-              alt="Joyful woman enjoying music with wireless headphones outdoors"
+              alt="Close-up of woman listening to music with premium matte black wireless over-ear headphones"
               className={styles.promoImage}
               loading="lazy"
             />

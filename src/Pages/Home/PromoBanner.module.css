@@ -179,7 +179,7 @@
 .imageCard {
   position: relative;
   width: 100%;
-  max-width: 480px;
+  max-width: 440px;
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.35);
@@ -188,8 +188,10 @@
 .promoImage {
   display: block;
   width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  object-position: center 48%;
+  object-position: center;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   transition: transform 0.4s ease;
@@ -208,7 +210,7 @@
   }
 
   .promoImageWrapper {
-    max-width: 520px;
+    max-width: 440px;
     width: 100%;
     margin-inline: auto;
   }
@@ -218,7 +220,7 @@
   }
 
   .promoImage {
-    object-position: center 48%;
+    object-position: center;
   }
 }
 
@@ -258,8 +260,14 @@
     justify-content: center;
   }
 
+  .promoImageWrapper {
+    max-width: 360px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
   .promoImage {
-    aspect-ratio: 16 / 10;
-    object-position: center 48%;
+    aspect-ratio: 1 / 1;
+    object-position: center;
   }
 }
