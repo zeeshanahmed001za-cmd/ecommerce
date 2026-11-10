@@ -17,7 +17,7 @@ function HeroBanner() {
           </p>
 
           <div className={styles.ctaGroup}>
-            <a href="#featured" className={styles.primaryButton}>
+            <a href="#categories" className={styles.primaryButton}>
               Shop Now
               <svg
                 width="18"
